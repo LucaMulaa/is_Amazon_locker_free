@@ -140,7 +140,7 @@ class LockerMonitor:
                     for location in location_list:
                         if isinstance(location, dict) and location.get("id") == LOCKER_ID:
                             # Ritorna il valore booleano del campo "isEligible"
-                            return bool(location.get("isEligible", False))
+                            return not(bool(location.get("isEligible", False)))
                     
                     # Se il locker non viene trovato nella lista, viene stampato un messaggio e si ritorna False
                     print("Locker non trovato nella risposta")
